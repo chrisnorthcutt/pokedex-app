@@ -1,0 +1,7 @@
+<div class="pokemon-list max-w-4xl px-10 m-auto">
+  <app-pokedex-card
+    [spriteType]="shinyURL"
+    *ngFor="let entry of pokemonEntries"
+    [entry]="entry"
+  ></app-pokedex-card>
+</div>

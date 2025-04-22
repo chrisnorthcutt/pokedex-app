@@ -1,0 +1,25 @@
+<a
+  class="rounded-xl bg-white p-10 text-sm/7 items-center text-gray-700 dark:bg-gray-950 dark:text-gray-30 flex flex-col"
+  [routerLink]="['/pokemon', pokemonDataID]"
+  *ngIf="pokemonData"
+>
+  <img
+    style="image-rendering: pixelated"
+    class="w-36 object-contain h-36"
+    [src]="
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+      pokemonData.id +
+      '.png'
+    "
+    [alt]="pokemonData.name"
+  />
+  <div class="types">
+    <div
+    *ngFor="let t of pokemonData.types"
+    class=""
+    
+  >
+    <img class="rounded-full overflow-clip" height="24" width="24" src="../../../assets/sprites/type-icons/{{t.type.name}}.svg" alt="">
+  </div>
+  </div>
+</a>

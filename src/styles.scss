@@ -1,1 +1,189 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --background-color: blue;
+    --background-color-light: lightblue;
+}
+body {
+    font-family: "Pixelify Sans", sans-serif;
+
+    margin: auto;
+    color: #f8f8f2;
+  }
+  
+  #pokedex-name {
+    text-transform: capitalize;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  .pokemon-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+
+
+  }
+  
+  
+  
+  
+  .pokemon-detail__background{
+    height: 120px;
+    width: 120px;
+    border-radius: 120px;
+    overflow: clip;
+    object-fit: cover;
+    display: grid;
+    place-content: center;
+  }
+  
+  .pokemon-detail__background img {
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    image-rendering: pixelated;
+  }
+  
+  ul.pokemon-list a {
+    text-decoration: none;
+    color: #f8f8f2;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    line-height: 1;
+  }
+  
+  .types {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .type {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: row;
+    gap: 8px
+  }
+  
+  .type--normal {
+    background-color: #f8f8f2; /* warm desaturated beige */
+    color: #282a36;
+  }
+  /* desaturated beige */
+  .type--fire {
+    background-color: #ff6e6e;
+    color: #282a36;
+  } /* brighter red */
+  .type--water {
+    background-color: #6ecff6;
+    color: #282a36;
+  } /* light neon blue */
+  .type--electric {
+    background-color: #faff70;
+    color: #282a36;
+  } /* lemon yellow */
+  .type--grass {
+    background-color: #80fa95;
+    color: #282a36;
+  } /* neon mint green */
+  .type--ice {
+    background-color: #aeeff0;
+    color: #282a36;
+  } /* frosty cyan */
+  .type--fighting {
+    background-color: #ff6383;
+    color: #282a36;
+  } /* saturated pink-red */
+  .type--poison {
+    background-color: #c874fa;
+    color: #282a36;
+  } /* lightened purple */
+  .type--ground {
+    background-color: #d6a779;
+    color: #282a36;
+  } /* soft earthy brown */
+  .type--flying {
+    background-color: #a5b8ff;
+    color: #282a36;
+  } /* lavender blue */
+  .type--psychic {
+    background-color: #ff79c6;
+    color: #282a36;
+  } /* Dracula pink */
+  .type--bug {
+    background-color: #a4fa6e;
+    color: #282a36;
+  } /* acid green */
+  .type--rock {
+    background-color: #c2b280;
+    color: #282a36;
+  } /* sandstone tan */
+  .type--ghost {
+    background-color: #8884d8;
+    color: #282a36;
+  } /* dusty indigo */
+  .type--dragon {
+    background-color: #9666ff;
+    color: #282a36;
+  } /* cool violet */
+  .type--dark {
+    background-color: #282a38;
+    color: #f8f8f2;
+  } /* Dracula base gray */
+  .type--steel {
+    background-color: #cfcfcf;
+    color: #282a36;
+  } /* light metallic */
+  .type--fairy {
+    background-color: #fba7d4;
+    color: #282a36;
+  } /* pastel pink */
+  
+  .pokemon-stats {
+    display: flex;
+    max-width: 300px;
+    flex-direction: column;
+    padding: 0;
+    gap: 4px;
+    margin: 0;
+  }
+  
+  .stat-bar {
+
+    color: #282a36;
+    width: 0px;
+    transition: .2s all linear;
+  }
+  
+  .stat-bar--green {
+    background-color: #50fa7b;
+  }
+  .stat-bar--yellow {
+    background-color: #f1fa8c;
+  }
+  .stat-bar--red {
+    background-color: #ff5555;
+  }
+  
+  .stat-name {
+    width: 120px;
+    text-transform: capitalize;
+  }
+  
+  .stat-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
