@@ -45,4 +45,4 @@ async function extractPokemonColors(startId = 1, endId = 10) {
 }
 
 // Set your desired range here
-extractPokemonColors(252, 389);
+extractPokemonColors(1, 389);

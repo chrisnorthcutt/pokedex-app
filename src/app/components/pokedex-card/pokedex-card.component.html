@@ -1,25 +1,40 @@
 <a
-  class="rounded-xl bg-white p-10 text-sm/7 items-center text-gray-700 dark:bg-gray-950 dark:text-gray-30 flex flex-col"
+  class="rounded-xl  overflow-clip bg-white  flex-row  items-center text-gray-700 dark:bg-gray-950 dark:text-gray-30 flex"
   [routerLink]="['/pokemon', pokemonDataID]"
   *ngIf="pokemonData"
 >
+<div [ngClass]="getTypeGradientClass(pokemonData.types)" class="w-24 h-24 flex items-center flex-col">
+   
+
   <img
-    style="image-rendering: pixelated"
-    class="w-36 object-contain h-36"
-    [src]="
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
-      pokemonData.id +
-      '.png'
-    "
-    [alt]="pokemonData.name"
-  />
-  <div class="types">
-    <div
-    *ngFor="let t of pokemonData.types"
-    class=""
-    
-  >
-    <img class="rounded-full overflow-clip" height="24" width="24" src="../../../assets/sprites/type-icons/{{t.type.name}}.svg" alt="">
+  style="image-rendering: pixelated"
+  class="w-24 object-contain h-24"
+  [src]="
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+    pokemonData.id +
+    '.png'
+  "
+  [alt]="pokemonData.name"
+/>
+</div>
+<div class="px-4 flex flex-row flex-1 items-center">
+  <div>
+    <p class="dark:text-slate-500 text-slate-300 text-sm">#{{pokemonData.id}}</p>
+    <p class="dark:text-slate-50 text-lg capitalize">{{pokemonData.name}}</p>
+  
   </div>
-  </div>
+  <div class="flex-1"></div>
+    <div class="types">
+      <div
+      *ngFor="let t of pokemonData.types"
+      class=""
+      
+    >
+      <img class="rounded-full overflow-clip" height="32" width="32" src="../../../assets/sprites/type-icons/{{t.type.name}}.svg" alt="">
+    </div>
+  
+    </div>
+</div>
+
+
 </a>

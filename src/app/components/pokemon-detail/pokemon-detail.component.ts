@@ -20,6 +20,7 @@ export class PokemonDetailComponent implements OnInit {
   pokemonDataID: any;
   animateStats: boolean = false;
   levelUpMovesDetailed: any[] = [];
+  pokemonDescription: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -93,6 +94,12 @@ export class PokemonDetailComponent implements OnInit {
       this.pokemonDataID = id;
       this.pokemonService.getPokemonSpeciesByID(id).subscribe((speciesData) => {
         this.pokemonSpecies = speciesData;
+       speciesData.flavor_text_entries.map((entry:any) => {
+        if (entry.language.name === 'en' && entry.version.name === 'emerald') {
+          return this.pokemonDescription = entry.flavor_text 
+        }
+        
+       })
       });
       this.pokemonService.getPokemonById(id).subscribe(async (data) => {
         this.pokemon = data;
@@ -139,6 +146,6 @@ export class PokemonDetailComponent implements OnInit {
     const isTooWhite = r > 235 && g > 235 && b > 235;
     const isTooBlack = r < 30 && g < 30 && b < 30;
     const [safeR, safeG, safeB] = isTooWhite || isTooBlack ? [180, 180, 180] : [r, g, b];
-    return `${safeR}, ${safeG}, ${safeB}`;
+    return `${r}, ${g}, ${b}`;
   }
 }

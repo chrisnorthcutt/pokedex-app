@@ -20,7 +20,12 @@ export class PokedexCardComponent implements OnInit {
   spriteURL: string = '';
 
   constructor(private pokemonService: PokemonService) {}
-
+  getTypeGradientClass(types: any[]): string {
+    const primary = types[0]?.type?.name;
+    const secondary =  types[1]?.type?.name ? 'to-type-' +  types[1]?.type?.name : 'dark:to-slate-500 to-slate-100'; // fallback to primary if only one type
+  
+    return `bg-gradient-to-tr from-type-${primary} ${secondary}`;
+  }
   ngOnInit(): void {
     const pokemonUrlPart = this.entry.pokemon_species.url.split('/');
     this.pokemonDataID = pokemonUrlPart[pokemonUrlPart.length - 2];
@@ -38,7 +43,7 @@ export class PokedexCardComponent implements OnInit {
         const isTooBlack = r < 30 && g < 30 && b < 30;
         const [safeR, safeG, safeB] =
           isTooWhite || isTooBlack ? [180, 180, 180] : [r, g, b];
-        this.backgroundColor = `rgb(${safeR}, ${safeG}, ${safeB})`;
+        this.backgroundColor = `rgb(${r}, ${g}, ${b})`;
       });
     });
   }

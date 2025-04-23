@@ -1,9 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 :root {
     --background-color: blue;
     --background-color-light: lightblue;
+    --type-normal: #f8f8f2;
+    --type-fairy: #fba7d4;
 }
 body {
     font-family: "Pixelify Sans", sans-serif;
@@ -95,8 +99,8 @@ body {
     color: #282a36;
   } /* lemon yellow */
   .type--grass {
-    background-color: #80fa95;
-    color: #282a36;
+    background-color: #439837;
+    color: #f8f8f2;
   } /* neon mint green */
   .type--ice {
     background-color: #aeeff0;
