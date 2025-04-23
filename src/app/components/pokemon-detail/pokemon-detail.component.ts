@@ -136,6 +136,13 @@ export class PokemonDetailComponent implements OnInit {
     return `${Math.round(pounds)}lbs`;
   }
 
+  getTypeGradientClass(types: any[]): string {
+    const primary = types[0]?.type?.name;
+    const secondary =  types[1]?.type?.name ? 'to-type-' +  types[1]?.type?.name : 'to-type-' +  types[0]?.type?.name; // fallback to primary if only one type
+  
+    return `bg-gradient-to-tr from-type-${primary} ${secondary}`;
+  }
+
   getGradientFromColor([r, g, b]: number[]): string {
     const darker = [Math.floor(r * 0.75), Math.floor(g * 0.75), Math.floor(b * 0.75)];
     return `--tw-gradient-from: rgb(${r}, ${g}, ${b}); --tw-gradient-to: rgb(${darker[0]}, ${darker[1]}, ${darker[2]});`;

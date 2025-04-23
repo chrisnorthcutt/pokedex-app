@@ -31,7 +31,7 @@ export default {
       'type-rock': '#a9a481',
       'type-ghost': '#735797',
       'type-dragon': '#6F35FC',
-      'type-dark': '#705746',
+      'type-dark': '#4f4747',
       'type-steel': '#B7B7CE',
       'type-fairy': '#D685AD',
     },},
